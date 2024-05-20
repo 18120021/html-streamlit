@@ -11,11 +11,11 @@ PORT = 8001
 STREAMLIT_PORT = 8502
 
 # Define the handler to serve the HTML file
-class Handler(http.server.SimpleHTTPRequestHandler):
+class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             self.path = 'index.html'
-        return http.server.SimpleHTTPRequestHandler.do_GET(self)
+        return SimpleHTTPRequestHandler.do_GET(self)
 
 # Function to start the HTTP server
 def start_http_server():
